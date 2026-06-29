@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fairmoni</title>
+</head>
+<link rel="stylesheet" href="fairmoni.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<body>
+    <section>
+        <nav>
+            <div class="edith">
+                <i onclick="menu()" class="bi bi-list" id="Hide"></i>
+                <p class="close">
+                    <img src="https://fairmoney.io/assets/fairmoney-logo-DR-jkARz.png" alt="" class="film1">
+                    <img src="data:image/png;base64,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" alt="" class="film2">
+                </p>
+                <div class="head" >
+                    <div class="neck"> 
+                        <button>
+                            <i class="bi bi-person"></i> Personal <i class="bi bi-chevron-down"></i>
+                        </button>
+                    </div>
+                    <button class="eye">
+                        <i class="bi bi-briefcase-fill"></i> Business <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="edith-2">
+                <div class="ear">
+                    <button class="nose">
+                        <img src="images/nigeria flag.jpeg" alt=" nigeria flag">
+                        NGN <i class=" bi bi-chevron-down"></i>
+                    </button>
+                </div>
+                <button class="mouth">
+                        Download the app
+                </button>   
+            </div>
+
+            <div class="res" id="appear">
+                <div class="carry-one">
+                    <nav class="res-nav">
+                        <p>
+                            Fairmoney
+                        </p>
+                        <p>
+                            <i class="bi bi-x-lg"></i>
+                        </p>
+                    </nav>
+                    <div class=" button-one">
+                        <div class="button-carry">
+                            <button class="enternal">
+                                Personal
+                            </button>
+                            <button class="inner">
+                                business
+                            </button>
+                        </div>
+                            <p>
+                                Discover FairMone
+                                <i class="bi bi-arrow-right"></i>
+                            </p>
+                        <b>
+                            Borrow & grow
+                            <i class="bi bi-chevron-down"></i>
+                        </b>
+                        <hr>
+                    </div>
+                    <div class="onne">
+                        <p>
+                            Save & intrest
+                            <i class="bi bi-chevron-down"></i>
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="onne-1">
+                        <p>
+                            Banking
+                        </p>
+                        <p>
+                            Help
+                        </p>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                </div>
+                </div>
+        </nav>
+        <div class="country">
+            <h1>
+                Smarter Banking Starts Here
+            </h1>
+            <p>
+                Access credit smoothly. Build stronger savings. Enjoy banking without friction.
+            </p>
+            <div class="hyper">
+                <div class="indigen">
+                    <button>
+                        Downlod the app
+                    </button>
+                </div>
+                <div class="foreign">
+                    <button>
+                        Start with downloading
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="edithwrapper">
+            <div class="edith-3">
+                <div class="photo">
+                    <img src="https://fairmoney.io/assets/hero-home-man-phone-CHgP6KEk.webp" alt="pic">
+                </div>
+                <div class="navigate">
+                    <div class="today">
+                        <button>
+                        <i class="bi bi-google-play"></i>
+                        <a target="_blank" href="https://play.google.com/store/apps/details?gl=ng&hl=en&id=ng.com.fairmoney.fairmoney" class="button">Google play</a>
+                        </button>
+                    </div>
+                    <div class="tomorrow">
+                        <button>
+                            <i class="bi bi-apple"></i> <a target="_blank" href="https://apps.apple.com/gb/app/fairmoney-loan-app-in-nigeria/id6456485223">App Store</a>
+                        </button>
+                    </div>
+                    <div class="yesterday">
+                        <img src="https://fairmoney.io/assets/qr-code-section-mmyv1GN7.png" alt="QR Code">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foundation">
+            <div class="card compound">
+                <img src="images/ball.png" alt="">
+                <b>
+                    20 Million
+                </b>
+                <P>
+                    Users worldwide has achieved <br> financial stability using FairMoney.
+                </P>
+            </div>
+            <div class="card pack">
+                <img src="images/Star.png" alt="">
+                <b>
+                    4.6
+                </b> 
+                <p>
+                    Rated 4.6 on App store and Playstore.
+                </p>
+            </div>
+            <div class="card car">
+                <img src="images/FT.png" alt="ft">
+                <b>
+                    Financial Times
+                </b>
+                <p>
+                    20 Fastest growing companies in Africa(2024)
+                </p>
+            </div>
+            <div class="card belt">
+                <img src="images/Nija.png" alt="ft">
+                <b>
+                    Licensed by CBN
+                </b>
+                <p>
+                    FairMoney is fully licensed and regulated by the Central Bank of Nigeria.
+                </p>
+            </div>
+            <div class="card handle">
+                <img src="images/NDIC.png" alt="ft">
+                <b>
+                    NDIC
+                </b>
+                <p>
+                   Deposits are insured by the Nigeria Deposit Insurance Corporation (NDIC).
+                </p>
+            </div>
+        </div>
+        <div class="page">
+            <h2>
+                <span>
+                    Banking that supports
+                </span> you
+            </h2>
+            <p>
+                Designed to fits into your everyday life
+            </p>
+        </div>
+        <div class="contain-all">
+            <div class="contain">
+                <div class="garri">
+                    <i class="bi bi-arrow-right"></i>
+                    <img src="" alt="">
+                    <div class="eba">
+                        <h4>
+                          Great Banking  
+                        </h4>
+                        Send and receive money, pay bills, and manage your account easily with a smart current account.
+                    </div>
+                </div>
+                <div class="garri">
+                       <i class="bi bi-arrow-right"></i>
+                       <img src="" alt="">
+                    <div class="eba">
+                        <h4>
+                          Seamless Loans  
+                        </h4>
+                        Get fast access to personal loans with flexible repayment options, right when you need it.
+                    </div>
+                </div>
+                <div class="garri">
+                    <i class="bi bi-arrow-right"></i>
+                    <div class="eba">
+                        <h4>
+                            Easy Savings
+                        </h4>
+                        Grow your money with high-interest savings designed around your goals.
+                    </div>
+                </div>
+                <div class="garri">
+                       <i class="bi bi-arrow-right"></i>
+                       <img src="" alt="">
+                    <div class="eba">
+                        <h4>
+                          Flexible Credit 
+                        </h4>
+                        Access a flexible credit line and pay interest only on what you use.
+                    </div>
+                </div>
+                <div class="garri">
+                       <i class="bi bi-arrow-right"></i>
+                       <img src="" alt="">
+                    <div class="eba">
+                        <h4>
+                          Cards 
+                        </h4>
+                        Pay online, in store, or withdraw cash anywhere with your FairMoney card.
+                    </div>
+                </div>
+                <div class="garri">
+                       <i class="bi bi-arrow-right"></i>
+                       <img src="" alt="">
+                    <div class="eba">
+                        <h4>
+                          Bill Payments
+                        </h4>
+                        Pay bills in seconds and earn cashback on every transaction.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="semo">
+            <h2>
+                Open FairMoney account in 3 easy steps
+            </h2>
+            <div class="run">
+                <div class="today">
+                    <button>
+                      <i class="bi bi-google-play"></i>
+                      <a target="_blank" href="https://play.google.com/store/apps/details?gl=ng&hl=en&id=ng.com.fairmoney.fairmoney" class="button">Google play</a>
+                    </button>
+                </div>
+                <div class="tomorrow">
+                    <button>
+                        <i class="bi bi-apple"></i> <a target="_blank" href="https://apps.apple.com/gb/app/fairmoney-loan-app-in-nigeria/id6456485223">App Store</a>
+                    </button>
+                </div>
+            </div>
+            <div class="year-1">
+                <div class="along">
+                    <div class="year-2">
+                        <img src="images/down.jpeg" alt="">
+                        <div class="line"></div>
+                        <img src="images/good.jpeg" alt="">
+                        <div class="line"></div>
+                        <img src="images/sent.jpeg" alt="">
+                    </div>
+                    <div class="year-3">
+                        <div class="department">
+                            <img src="images/down.jpeg" alt="">
+                            <h5>Step1</h5>
+                            <b>
+                                Download the FairMoney App
+                            </b>
+                            <p>
+                               Get started by downloading FairMoney from the App Store or Google Play.</p>
+                        </div>
+                        <div class="department">
+                            <img src="images/good.jpeg" alt="">
+                            <h5>Step2</h5>
+                            <b>
+                                Complete your verification
+                            </b>
+                            <p>
+                               Verify your details in minutes and set up your account securely.</p>
+                        </div>
+                        <div class="department">
+                            <img src="images/sent.jpeg" alt="">
+                            <h5>Step3</h5>
+                            <b>
+                                Start banking
+                            </b>
+                            <p>
+                               Send money, pay bills, save, and access credit instantly.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="images/details.jpeg" class="step-image" alt="">
+            </div>
+        </div>
+        <div class="brand">
+            <h3>
+                Join 10M+ Nigerians who trust us
+            </h3>
+            <div class="card-g-container">
+                <div class="card-g">
+                    <div class="stati">
+                    <div class="profile">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP1ZBni5Q9JRkZn02wgjzbNMJPqizLW0K8MA&s" alt="">
+                        Sarah <i class="bi bi-circle-fill"></i> <br> @sarah
+                        
+                    </div>
+                    <p class="group">
+                        Customer support is always available and responsive. They helped me resolve my issue within minutes. I have a question and they respond in no time!
+                    </p>
+                </div>
+                <div class="stati">
+                        <div class="profile">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_quv16EqBsarIMMJeuvtMsg48zH8-oYp7BA&s" alt=""> 
+                            <div>
+                                <p>Daniel <i class="bi bi-circle-fill"></i></p>
+                                <p>@Sarah</p>
+                            </div>
+                        </div>
+                        <p class="group">
+                            @FairMoney made my life a whole lot better.
+                            1 am able to easily budget, save for future expenses and also invest in assets I am interested in. Truly a lifesaver.
+                        </p>
+                        </div>
+                    <div class="stati">
+                        <div class="profile">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7-if6IIbni5AK2Fu8H1PhX_Uqay_mJDjZhw&s" alt=""> Michael <br> @Micheal_afolabi
+                            <i class="bi bi-circle-fill"></i>
+                        </div>
+                        <p class="group">
+                            I got my salary loan approved in less than 24 hours. The process with @FairMoney was incredibly smooth and stress-free!
+                        </p>
+                    </div>
+                    <div class="stati">
+                                <div class="profile">
+                                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTEhIVFRUVFxUVFRUVFxUXFxcVFxUXFhUVFxUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQFy0dHR0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tNystLS03LS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAACAwEEBQAGB//EADYQAAIBAgUCAwgABgEFAAAAAAABAgMRBBIhMUEFURMiYQYUMnGBkaGxQlLB0eHwghUjJDND/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAHxEBAQEBAAMBAQEBAQAAAAAAAAERAgMSITFBE1EU/9oADAMBAAIRAxEAPwCYVR1OqZcKo5VTN6etSFYdGuZMaoyNYNTrXVcdGuY8aw2NYY1sKuMVcx41hqrgTW8cn3gyVXCWIAmr7wF7wZPjhLEAGp7wT7z6mV453jCLWr70R7yZfjEOsBNb3n1JVdvRavstxHRunzxErR0irZ5cJf3Nuvj6eHTjQirr4qstb/Lv+iam9fyFUOlV5a5cq7yaX43JrdLy/FXpr6mDjOtVZ71JNdr6fYz5VhHl/tbGK8r0nGS9GU5YkouoInVYjxoTxIiVcoTrC3WGS5OuV6lcrSrCZ1QwafOsInVEVKomVQMLVrxjin4v+3IFg0cag2NQzo1BkapovWjGqEqpQVUJVRC1owrDY1jNjVGRqAWtJVRkaxmRqhqqOG0vGJ8YzvGC8YC1f8YLxTPVUnxQGtDxjvFKHik+KBavKsXek4OdeoqcOd3wly2YiqntPZeo6OFqVl8UtnyktP2T11kF3+PUVY0sLQUForavl9/qzwHU+o+JJtfDwvQV1TrM6iUG9Fr82zPhIjf7T55yLGa4cYg0YlyFBsz67xrOVSURNSmabw4qphyJ5VerFrJlSdSxsYigY+MpWNeO5WXfGFyqi5VCu5gyqGzHTZTFSmLcxcpgR2ZHFbOcIAVUONUpuWpMZFq1fVUJVCjGZOYWHrQVQYqhnZwlMMLWiqoxVDOTYWZjw9aPikqoZyqMPxmGDYv+IT4pRVclVxfRsXvFJ8UpKud44Fq8qp6OfUnDD+Enva55KjV8y+aNGtVvJmfcVzRplmgVaRbpoz6uLkaOGWqNrCxXYxsNE2MPTdtDl7raQ+VFFOrSRacnswZIjVsrFUjz+PieqxdPQ851CG5fj6+p7nx5qurCXIu4mGhlykehxdcPcyjlICUgXICUisQPMcKzHDGkORKkKbJTG0PUgswhSJzCB6kMpvUrKQyN+BhqxcdGtO6CpVk21ba5kKT9SzSoTeqRNhyrmlm/sQ0sl7a3sVLSSd7hKtK22gFq34K8vqIraNpEQxrVtL22FVa19bWCaQ852cRmOzFEtUq1mn6mlTxUc1pSyp8vj1ZT6XShK+eLemlna3qDjMNaStdoi2W4qSya9BjVCll/7sJqSunCV/o+wuHVYLv9jzlam1rayNvp+AgoqU/NfWxn1zzJ9XOur+PR9Ex8aslCnCU5u9opdlqa9Hr9CDcZvLJPK4yummtGmVPYfG4enXzOFnlaTjrbu7fIyPa6lRq4idSF7Td79/Uj/HizS/173HrljqU15Wm+6Y2o45l6o+VYrCTorxKc5Jcq47H+0WKlSp6OCinFzSaz63Td+fkR/wCffyr/ANs/Y971HG047ySPM4/qtF3WZHnqeCnUSnVqS111bOq9Ppx0d7+o54Oef2j/AF6v4PFYqD2aMWdTVl7FYCFrxuZElZnT45M+MO7d+nuYNwGwbl4g2/qQKzHANITCuLRNwaG5glIVFktgDLj8PWysqpjsPG72FQtuav6lmfUXa0dEJWGV7tlepBJ63sL5TumKo5PV7l6i1FtPa2xWgqS5aYFWjJ3adyf6IfGEd+BOIqx/hQlaRd+ROY0iTVInMKzHZhhrdFq+dr+ZWRrdTwkqajd7nmcJWyzUuzR6Lq+MlOMXLjRP0OfyS+8sa8WethGJV6UvTUu4ejnpqz4K2E8yce6sXvZ+qoXpVPK47X5jfcz7ty5/Fc/puHwrVndxa0um07P1LNRtxUdMsef8l9uPEoiK9enFNzmkktEYzy9X40vjn6wOpptxpx/jaNjr1H/xsqWkYpfYzMDPPVdV6LaC9O56KrHNSae7RXfdlkPx+OdbWD0yvGdFLT4crFTpSV3J5245U3wlsir021KtKnUeVSflfqbypxXKf2L8nd5vxHHj39ec92yx1MDELzM9l1HEUkrSklftr+EeLrvzP5m3gts2sPNJLkC2C2Rchs3xgm5wNzhghMm4tMJMlqZclMWibgWnQfL1Rp4ad1orIyaciwpv/WT0rmtLxEnv9joyUt7W4f8AUyIyaZfwkkl5vh47hh6syUE72zW5Hpcozq2IT2WVfk6ljGndP6PkWDVvE0VJb2ZlyVnZljG4lSta9+SncvmI6plyLg3OuXhaNSNCjjW4ZHxsZiZawNNt34W7FeYJW10yt5j1dKnTqK04KXzPEYV+Y3cJi2mtTi83F3Y6fF1PyvR0PZnDy4kvlJosz9nMNTWZU02uZO/7FYHqKSA6j1hWsc8vd+a3vPCpThCKcnBt3fwrb6F2h1Gn4bTg1Lvt+DDrdSdm48g0+ou1pWbtozWeK37U3zTn5DK9CFRuU4pxvyX30HDuN45lpspO32PN+9yi+6LVHq3F7FdePuT4U8nHV2/rsbgqVO7jHXu9X+TytWCcm/Vm51bF30MVI38PNk2ubz9S34rVqdlcrZi3idmVKdO50RzpOHe7nDNnIJMWmSiFmXJTAudcAbGduBka3oV0y1QitP8AbCsOU7D662LGIei/RXq0pX8qYc4vS9wMVVqUUxFNpLcOlN3cbWFV6DWwYNHUjfsJZ0acv5X9mWaHTKstoP5vT9lSYm3VW5KZqw6PGP8A7aqXotWPnOjFWhBN92PS/P1n4bCrebsvyx1XFXsoq0Vx/cVVk5asTEr1TemjSnZp9y8qi0aZl4R5k48rYlzcXqY9c7Wk6x6SnirK5XyucvM9DOw+K0NjDvRcGV59Gnt7/B5IR0s5Fj3mPEF9gKUO5bdSlFbq4p9aySfrOxDur5TOqw5uaWLrprTYxcbWsrI05ZeSxXr1LyAAgxj2Ncc6pidjqFPgmT/wTlenFtblkZkXZkkeIu7ODC1huGticjGYmk1L6EKMu5nrbAHA1JO+4VGLY039TcOnfg0cLTpx1nZ+iLcsVGKvSSS+WpO3/i7JP6XhaNd62SWnxaF2VGP/ANKi/wCK/qZNXFyk73FeI+5Xon2xtzjR31f1sDDqMI/DTS+epkKZyKnCfetf/rUvT7IrV+oTl/EykkEth+sTerROTe7CQsZFlYlDQOUYSojIqNRxkmjXUVON1szHrwLnSK1nlfO3zM/Jz81pxf4ipRcdtUXcHjdEi1UoXKVTA63i7My9ubPq/Wz8egws4y3ZWx+FTqK0vK97GJJVIcXF1Me2+wufH92U+vJ8+xt4zEQirRMOUszuyvVxNx1KZpOPWM+uvYMo6hJWQUkDLYoleevI+CSV9+4m19/wE1luXE0vKuzJIzMkMLFr216RPDVoQkmm6cZfcwFF9za9qvaStj6kaldwThHIskcqtdvXvqzCyyOfxyzmS/ro0EtyzhI21KrReprTU1ZGErQi4SHhaFIOxziHFDLUWJsFY6ww5I5I4JIZICREQkgKuQxMWhsYgEON0ynGTT+RorYoV1qBS/XpMFiM8b88hVWYXTcTkl6Pc9BBZji8nPpXb4+vaK3guW+xl4yKvZG5jXljblmHila4/FdqfJMigWaNRNWZVDps7HKvKVttV+QalS4pSJU1r3JvK5XRl6bk05LkHKwYtX1QyM94j2OJyr0/JwEyVhm9rAO6TuncFVXfdo6dVvS7MZrotmIofFdlpyK8KXNxqLjGmRYURaQxFaRlPYKCAiEmBGMlEXOTAJaJSOiiUMkJaBKPoFZaEIAmwcEckShkJdyri42LSFYpXj8hBSR6L2fxV9JcHmh2FxDg01x+SPLx78418ffr1r1eIhnbfC2PP9UnrY1I9Ri6bknrbY89Opd37nP4OLL9/jbz9zPn9RYOMeSCYL7nW5BphvUXBjYoDBc5ys19yZxBSvb9iUseM/5UcJyvucGhlKD72HRw2l81/RI7FYZxqOmntyC5KOid+7Mpd+tUyXcFMAKKLjOjQyMhaQaQyORIMWHwAcmHcBMIEjgSLTCfAwY3qMihUWMuPQKK/BJEQgJCRNRaEk8ATKaIaDqq0mgRKQjmgZbkpjA3Ox1F6gSIXAEfzYdSYE+CANYy3K1SbTstizCWhRrT8zEIb4r7kle/qSJSlGq7avVnIFBJkqtGgkLQY0mINC0xiYFo4h3BgE9hhKYSF0mGhgQdgAlsFISGIWg4gQkwwU+SbAEk3ISJa47gSnjYeYrlvGLRFMD1zjciwcEdJAAMglnMAtLWK9AAsNs0QMHUXoUcQ/My9T2KVeF5Ctw4Vc4d7q+6OF7Kxm3CRByZOgYaYISAhjYiYjkMGQOkyE9CGMJpvcbYrwepYT1GSUtwgUStwA4vUOLAQSAjfQ65BK7ABJk2/AK2DT1AlbG/CUUaWJj5WjMQHDY7EZSVsTwIizrEnDM/B7/QloHBvzDZbsAmnsVcRK7uWo7FWra9lf6k04A444lWs9EoEIYFEJSBQSAjIoZEXEOIwYRJnXAkxgNOWpYUilEfCQyXESuQIsNMAPsSRyStgIcQ1+gYrUOwE6xNiLaBgEVdvoZLia7WjM1rVgaYbHWDoolpCIhI5RGWIygHUPiLE1qDhaet+wxoACWiKL7mhIWo0+4Zpe0ivZHFjw4dzhelH+sYSGf4OOBqJBQ3+hxwkm9yYHHDMcBUzjgIpbDY8HHFBbpjIknAQ3uRA44AbLcYzjgCXyStkScFJL5+RnPdnHCog6PJzOOAUtBROOFQs4PZkEnDgoXsyqjjhxn2M444aX//2Q==" alt=""> Chucks <br> @Chucks007
+                                    <i class="bi bi-circle-fill"></i>
+                                </div>
+                                <p class="group">
+                                    Managing international transfers has never been easier. With @FairMoney, I can send money abroad quickly and securely, without the usual hassle.
+                                </p>
+                            </div>
+                            <div class="stati">
+                                <div class="profile">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnQifwhBNTMWlIJ9S5R0N_A6JH4xj-emBJlA&s" alt="">Amaka <br> @Amaka_ng
+                                    <i class="bi bi-circle-fill"></i>
+                                <p class="group">
+                                    Customer support is always available and responsive. They helped me resolve my issue within minutes. I have a question and they respond in no time!
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="another">
+           <h2 class="stubborn">
+            Take control of your money today
+           </h2>
+           <p>
+            Borrow, save, and manage your finances with one secure banking app. <br> Download the Fairmoney app on Play Store or App Store
+           </p> 
+           <div class="stress">
+            <button>
+                <i class="bi bi-google-play"></i>
+                  <a target="_blank" href="https://play.google.com/store/apps/details?gl=ng&hl=en&id=ng.com.fairmoney.fairmoney" class="button">Google play</a>
+            </button>
+            <button>
+                <i class="bi bi-apple"></i> <a target="_blank" href="https://apps.apple.com/gb/app/fairmoney-loan-app-in-nigeria/id6456485223">App Store</a>
+            </button>
+           </div>
+        </div>
+        <div class="finish">
+            <div class="final">
+                <div class="primary1">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAAYCAYAAADAm2IFAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASWSURBVHgB7VrvldowDNf19XszgjtB6QRNN6ATNJ2gdAJggqMTwE1w3ARJJ4BOkGwAnUC1iHwYRY6THMd7tPze84VYkiVL/qscwIWAiMaWHGts6B1ueFXcWSenvQTu7goYAKtnYR/fvarCtvW5h7yxDyOq97aNbUQusY+RrB/aj6sC9kMJA2FlV6KtTU/5mWLPjoPXJrc8Zz+uCW/gcliL9yd4OSiwWYjIgR/Df4q3cCHYZXBtnf0F6iWysu8rOA++2rII0CiwrTP7X4YWXArAFnqAZwgV2gP3IT4KMDRncKxdaGvTYkTnhsAeOoUB6Kj3bPLOf5a/gnNC2Y/SjnKJLVPav+R+xvucEfwTprmy4Hoj6kuuv/dtCuy5Do+KfWkLfxngX2K9jzvQ79yWTOHPFZtTPN4InC/UAYZh/218fcxXipIq7W0Ez3hQcPEYkBi+ejIyOEuvLYmptAnbg0tIhI3LFt5S8E4xjnshUwr6uEV2OcB/RE+8geRjIdrTBnKiHahGzKwV50AajUbIVUpbC4ycZgPIOvBU4n3ifmC9amQtvODxEt8M4pjIAAu00TI8nTQ5xP1HdLciPQjaB/Geivenw5aA/UAjLlFGmKEWmb4T9IxpfWYuIWcZKiNNHk9H9M71jHQK3ol4Lz3eUtBoeUsCNqNHKxUa8dMMXim0RcC2Ek/9txH0w6TCpl8Trw+5oGWO0AfOiIQNMdhcDjeaIuwX3JkYiao8NoOWKo4vFR3+Hqn20dMrnTpRdBDksp0L+jpQnwo5adMiJifqn+/+g+65fAqkYqBerpa2PGI9e0bwcqx68Pkn0il32nh1Dy3y0tatcmKNLYkO8t7+S7zvAjqnHLhDgebybvg5F/WH+zs2z0hrd0rvdRVyHcf6oEQj6lXukF2vBNQJa0sBx0RFqrCtWpqQ9mtXF1ln4GWQOtMI/zt+btkWJ/+JnzJJ8zzItODu25zLy9ZKythS2PIb6qSCgcvhJ5x2MPV+U/66wvBHChk4bbDKuj9wXqxBH1QOFf3hgUyBczeQES+//kqy51zCAUMyVBPxPrcNztyLVUgjysCFQMkLq7MK6HyIiMsV6uAwkXz4FJHpiwpObZ3HPn54WMExuAQa1Kn3fpIgGrLnypH8bBjqX24uAS2IXVKcbqnz8Zx0sP2hr1hyj1zDy/AQ0ud08sGo5DKDsL3TtraHBFc6gzJJEz5Fave3S2Ch1BUQAc/Qn6LaZdI2SrurHrMsBGrT9+EYj1m9HI46DZcCTu31A2i835VMwQ4Jrhy5BuoT3j3/ruDC4E4XonreUXYGzdlkoDljq65tRvSRrT8UfRk0D1dzJWceWjkkX//gsrJv0AyiMzq2z70WfMcXfZLwljdjeU1mz7SP50rs83bxHsKry8GX/lnGky1AP4A1/H6nnCT3Pb5mpFCPusPM4RMd7cmJbC9Uz+2YE6MUJ7bJd7TVxHQwXwrH5Y54tpqemN+62svtjDzebYf/LqG05NiroiX5PdxwncA6y0bZK7dH+1jCDdcLSkOijh3e/tnwuoHNnL1DBjdcNzj3vPNma46Rb+9/ARE77xpPanDvAAAAAElFTkSuQmCC" alt="">
+                    <p class="primary2">
+                        28 Pade Odanye close, <br> Adeniyi Jones, Ikeja, Lagos 
+                    </p> 
+                    <br>
+                    <div class="platform">
+                        <i class="bi bi-linkedin"></i>
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-youtube"></i>
+                    </div>
+                    <div class="press">
+                        <button> <i class="bi bi-google-play"></i>Google Play</button>
+                        <button> <i class="bi bi-apple"></i>App play</button>
+                    </div>
+                    <p>
+                        All rights reserved. 2026 FairMoney 
+                    </p>
+                </div>
+                <div class="kg1">
+                    <h5>
+                        licensed by
+                    </h5>
+                    <div class="primary3">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAoCAYAAAC4h3lxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJgSURBVHgB7Zk/TFNBHMe/14ix6lAHEnDSBBNh0A4uGBJbdcFRGYiLjXGDwcTFoQYaHVhIHIwTalnQQRm1i/B0EAf/4CKDJuqkiQMdgAJNeNz3Hq/hTyBp7/daLuknad+7l7vk97373e/ufqewQalUTgH+kO8jqRQS2L94+jcejx/Ms6D4t7JSHlpb84fhFGo4Hm/JqVJpNaNLz+AkKk0B0/otBTfxKMCHo+i5WozBYXTASTgtgDQFNJoDsKS/MIp/i0XUQtvhBF703oEN1iNQq/Gm7VLtbUOsRyDEu3a/qvqpV/cgQXMSV8PP4l/tNvOQpG4CCn++4tbbx8jOPIckdRFA40c+TZr3nvbTkERUQHZmAv1vRre4yWbjM51pZLouQhJRAUdbDpnQePvdUyMiauOJWBgld89dNU8aHogI4nxUxhNRAWSzCBKl8URcAKEIuhO3Cn2nziNKIhFABs9eQT1o7kZ3Y6G8jEffXpv3TFdau9MxREEkAmb//8LI58nKTpVlulTP8U5IIyqAvZ6fm8bLHx9MOdl6Akw9UQAXOUYjRiVJxARwo5b9OFHp9cEzvZUIlP8+ZYTxWfj9BQ8v3IQU1mmVcF/PsMkRYOh80H0dHYn2LfXMCv3+yY4DULXniO2IRSEa39fRjbHLAzuMJxQ2dmnA1JHE2oXajug8sB8sXsnWk3vW5ShxMlNgfm7KtLPF2oXY86Fx9Wi3HadTi6R5Jm407gvQGV777FIDiekc+yzcxdMupHJwl/GYvijz9IrinAh9KZnjTaUKP2xc9t3APr4v43wNXF7lgo4H1gFiMuJGcoV4WwAAAABJRU5ErkJggg==" alt="">
+                        <img src="https://fairmoney.io/assets/cbn-logo-official-BcwKI2SC.png" alt="">
+                        Central Bank of Nigeria
+                    </div>
+                    <div class="primary5">
+                        <h5>
+                            DEPOSITS INSURED BY
+                        </h5>
+                        <div class="kg3">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAoCAYAAAC4h3lxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMKSURBVHgB7Zk/TBNRHMd/1wixYuKRaFJ1EGMd6iA1cakhCE7IqJ1cbJCxg6ODCTQ6MHYojloWJ+MmcVBpDAmLxtPBOjQBF2kCCUdSOGgTzvf9XY8c9JTQ90q5pJ/kuD95R76/937v++u9p1Edy6oNEdkTtk1xTSOdji8FccyEw9153Gj4s71dm9jZsScpUGiT4XBXRrOsakrcvaJAog0jgDlxNUTBpIAAbAooYq6aIQowwnD0QAcAOgG0mxPUIsqba2SsLFGlalFUP8/H6a6TpBrpACq1LSpvrFFpvUwlc5mM1SW+x/P9IIjIKZ2iZyIUP3dZSVBSNlreNGn8w3SDWIiK6hEh1BFsrC5y25JZbvgfyau3KH39LjWLVAD5n58oX5zjnoyf7av3akSI7vVtj0AxSnyIEXv/+xs/L9x/Rs2iZA4kryRopO/Gge0wMggSB+CR2TBJhiN1IYzA/J8iqeTIAoD48Y/T9HThNaeQKpQH8C9xU1/ecroMXIjxnFGF0gCMlUXRyy9YrBdMdKQOHCnd37zj+CEVwH4PZ5/v0dldIBq8KS2wW0F89vbYHoeqVLek64BcAN1hPpfWnbSBmOzgIz67FoszSPeP7hGPuoB5EenpJRmkAkA+A6+zoKefJx7wNcRDZCo2vNvWBekGUJVlkE4heDp60xUE8MytrsloglLX7jS86xaxkUsH14//IV3IIADikS7ZeoEC+IkwcDHmW5UhHu9gtOKed5pB2oUQAERAECasFz/xGK180ZkXfiNzWJTY6JOb9zidct9nd1PDD8wHFDLUA6SWbPoAJQE4/j7K16gBfkFA/OPPL7nQwW7d9rIoXZWAcLeIIT3gPgDpNfXVqcQQnx0cU/Zxo3xZBZaa+zHLYt1J6nUc9LzKL7OWrAthouaMdzS//IvvIRijAWdSTUsXttDz+LyE8FZ8D4NAr8yBzrpQu+kE0G5CYoVXblmgzYTEGrtBwaUgUkjLUHCZCYmNsoLYKghcEGJTMoOdSs19UN/se0jHeL8M89VJeS3jdDzRX+c3Wknh3ZvVAAAAAElFTkSuQmCC" alt="">
+                            <img src="data:image/png;base64,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" alt="">
+                            
+                        </div>
+                    </div>
+                </div>
+            <div class="kg5">
+                <div class="primary5">
+                   <ul>
+                        <li>link</li>
+                        <li>Home</li>
+                        <li>FairMoney</li>
+                        <li>
+                            Our Company
+                        </li>
+                        <li>Contact Us</li>
+                        <li>FAQS</li>
+                   </ul>  
+                </div>
+                <div class="primary5">
+                    <ul>
+                        <li>Products</li>
+                        <li>Banking</li>
+                        <li>Personal Loans</li>
+                        <li>Business</li>
+                        <li>Savings</li>
+                        <li>FlexiCredit</li>
+                    </ul>
+                </div>
+                <div class="primary5">
+                    <ul>
+                        <li>Legal & Compliance</li>
+                        <li>Terms and Conditions</li>
+                        <li>Privacy Policy</li>
+                        <li>Whistleblower Policy</li>
+                        <li>FlexiCredit Term and Conditions</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const menuicon = document.getElementById("hide")
+        const appear = document.getElementById(`appear`)
+
+        function menu(){
+            appear.style.display = "flex"
+        }
+
+    </script>
+</body>
+</html>
